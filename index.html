@@ -100,7 +100,7 @@ var MONTHS_META=[["Jul","'26"],["Aug","'26"],["Sep","'26"],["Oct","'26"],["Nov",
 ["Jan","'28"],["Feb","'28"],["Mar","'28"],["Apr","'28"]];
 var TABS=[{name:"🟠 JUL–DEC 2026",s:0,e:5},{name:"🟣 JAN–APR '27",s:6,e:9},{name:"🟢 POST-MOVE '27–'28",s:10,e:21}];
 function tabOf(i){return i<6?0:(i<10?1:2);}
-var DATA_VERSION="2026-07-02-b";
+var DATA_VERSION="2026-07-02-FIX-290-v9";
 var STORE="niw_tracker_autosave_v1";
 
 // ===================== DEFAULTS =====================
@@ -173,11 +173,17 @@ function migrate(sv){
   if(typeof sv.openMonth==="number")S2.openMonth=Math.min(sv.openMonth,21);
   return S2;
 }
+function forceCorrections(st){
+  // ALWAYS enforce: Jan 2027 onward (months 6-21) side income = 290.
+  if(st.months){for(var i=6;i<st.months.length&&i<22;i++){if(st.months[i]&&st.months[i].income){st.months[i].income.forEach(function(L){if(L.n==="Side income")L.a=290;});}}}
+  return st;
+}
 try{
   var raw=localStorage.getItem(STORE);
   if(raw){var sv=JSON.parse(raw);
     if(sv.__v===DATA_VERSION&&sv.months){S=Object.assign(JSON.parse(JSON.stringify(DEFAULTS)),sv);}
     else{S=migrate(sv);}
+    S=forceCorrections(S);
   }
 }catch(e){storageOK=false;}
 function save(){try{S.__v=DATA_VERSION;localStorage.setItem(STORE,JSON.stringify(S));storageOK=true;}catch(e){storageOK=false;}flashBadge();}
