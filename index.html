@@ -100,18 +100,18 @@ var MONTHS_META=[["Jul","'26"],["Aug","'26"],["Sep","'26"],["Oct","'26"],["Nov",
 ["Jan","'28"],["Feb","'28"],["Mar","'28"],["Apr","'28"]];
 var TABS=[{name:"🟠 JUL–DEC 2026",s:0,e:5},{name:"🟣 JAN–APR '27",s:6,e:9},{name:"🟢 POST-MOVE '27–'28",s:10,e:21}];
 function tabOf(i){return i<6?0:(i<10?1:2);}
-var DATA_VERSION="2026-07-02-a";
+var DATA_VERSION="2026-07-02-b";
 var STORE="niw_tracker_autosave_v1";
 
 // ===================== DEFAULTS =====================
 function m26(inc,bills){return {income:inc,bills:bills};}
 function seed27(extraInc){
-  var inc=[{n:"Paycheck 1",a:1740},{n:"Paycheck 2",a:1740},{n:"Side income",a:490}].concat(extraInc||[]);
+  var inc=[{n:"Paycheck 1",a:1740},{n:"Paycheck 2",a:1740},{n:"Side income",a:290}].concat(extraInc||[]);
   var bills=[{n:"Insurance",a:273},{n:"Car",a:605},{n:"Phone",a:134},{n:"Student loans",a:50},{n:"Subs+Apple",a:62},{n:"Hair",a:110},{n:"Child support",a:450}];
   return {income:inc,bills:bills};
 }
 function seedPM(){
-  var inc=[{n:"Paycheck 1",a:2075},{n:"Paycheck 2",a:2075},{n:"Side income",a:490}];
+  var inc=[{n:"Paycheck 1",a:2075},{n:"Paycheck 2",a:2075},{n:"Side income",a:290}];
   var bills=[{n:"Insurance",a:273},{n:"Car",a:605},{n:"Phone",a:134},{n:"Student loans",a:50},{n:"Subs+Apple",a:62},{n:"Hair",a:110},{n:"Child support",a:450},{n:"Rent",a:1000}];
   return {income:inc,bills:bills};
 }
