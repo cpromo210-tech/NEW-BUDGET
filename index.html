@@ -100,35 +100,35 @@ var MONTHS_META=[["Jul","'26"],["Aug","'26"],["Sep","'26"],["Oct","'26"],["Nov",
 ["Jan","'28"],["Feb","'28"],["Mar","'28"],["Apr","'28"]];
 var TABS=[{name:"🟠 JUL–DEC 2026",s:0,e:5},{name:"🟣 JAN–APR '27",s:6,e:9},{name:"🟢 POST-MOVE '27–'28",s:10,e:21}];
 function tabOf(i){return i<6?0:(i<10?1:2);}
-var DATA_VERSION="2026-07-02-FIX-290-v9";
+var DATA_VERSION="2026-07-02-CURRENT-1637";
 var STORE="niw_tracker_autosave_v1";
 
 // ===================== DEFAULTS =====================
 function m26(inc,bills){return {income:inc,bills:bills};}
 function seed27(extraInc){
   var inc=[{n:"Paycheck 1",a:1740},{n:"Paycheck 2",a:1740},{n:"Side income",a:290}].concat(extraInc||[]);
-  var bills=[{n:"Insurance",a:273},{n:"Car",a:605},{n:"Phone",a:134},{n:"Student loans",a:50},{n:"Subs+Apple",a:62},{n:"Hair",a:110},{n:"Child support",a:450}];
+  var bills=[{n:"Insurance",a:273},{n:"Car",a:605},{n:"Phone",a:134},{n:"Student loans",a:50},{n:"Subs+Apple",a:62},{n:"Hair",a:110},{n:"Child support",a:450},{n:"Gas",a:240},{n:"Fun",a:200}];
   return {income:inc,bills:bills};
 }
 function seedPM(){
   var inc=[{n:"Paycheck 1",a:2075},{n:"Paycheck 2",a:2075},{n:"Side income",a:290}];
-  var bills=[{n:"Insurance",a:273},{n:"Car",a:605},{n:"Phone",a:134},{n:"Student loans",a:50},{n:"Subs+Apple",a:62},{n:"Hair",a:110},{n:"Child support",a:450},{n:"Rent",a:1000}];
+  var bills=[{n:"Insurance",a:273},{n:"Car",a:605},{n:"Phone",a:134},{n:"Student loans",a:50},{n:"Subs+Apple",a:62},{n:"Hair",a:110},{n:"Child support",a:450},{n:"Rent",a:1000},{n:"Gas",a:240},{n:"Fun",a:200}];
   return {income:inc,bills:bills};
 }
 function buildDefaultMonths(){
   var m=[];
   m.push(m26([{n:"Paycheck 1",a:1397},{n:"Paycheck 2",a:1397},{n:"Side income",a:220},{n:"Extra hustle",a:405},{n:"Plasma remainder",a:175},{n:"Gift / other",a:450},{n:"school",a:105}],
-    [{n:"Phone (intl+late)",a:258},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Misc",a:60},{n:"Subs+Apple",a:62},{n:"Credit card min",a:75},{n:"Klarna",a:77},{n:"Affirm",a:177},{n:"CC payoff",a:310},{n:"cashapp",a:60}]));
+    [{n:"Phone (intl+late)",a:258},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Misc",a:60},{n:"Subs+Apple",a:62},{n:"Credit card min",a:75},{n:"Klarna",a:77},{n:"Affirm",a:177},{n:"CC payoff",a:310},{n:"cashapp",a:60},{n:"Gas",a:240},{n:"Fun",a:200}]));
   m.push(m26([{n:"Paycheck 1",a:1397},{n:"Paycheck 2",a:1397},{n:"Side income",a:490}],
-    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"Credit card min",a:25},{n:"Kikoff (last)",a:70},{n:"Klarna",a:22},{n:"Affirm",a:177},{n:"CC payoff",a:300}]));
+    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"Credit card min",a:25},{n:"Kikoff (last)",a:70},{n:"Klarna",a:22},{n:"Affirm",a:177},{n:"CC payoff",a:300},{n:"Gas",a:240},{n:"Fun",a:200}]));
   m.push(m26([{n:"Paycheck 1",a:1397},{n:"Paycheck 2",a:1397},{n:"Side income",a:490}],
-    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"CC payoff (final)",a:500},{n:"Klarna",a:20},{n:"Affirm",a:177}]));
+    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"CC payoff (final)",a:500},{n:"Klarna",a:20},{n:"Affirm",a:177},{n:"Gas",a:240},{n:"Fun",a:200}]));
   m.push(m26([{n:"Paycheck 1",a:1397},{n:"Paycheck 2",a:1397},{n:"Paycheck 3 (13th)",a:1397},{n:"Side income",a:490}],
-    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"Affirm",a:132}]));
+    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"Affirm",a:132},{n:"Gas",a:240},{n:"Fun",a:200}]));
   m.push(m26([{n:"Paycheck 1",a:1397},{n:"Paycheck 2",a:1397},{n:"Side income",a:490}],
-    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"Affirm",a:132}]));
+    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"Affirm",a:132},{n:"Gas",a:240},{n:"Fun",a:200}]));
   m.push(m26([{n:"Paycheck 1",a:1397},{n:"Paycheck 2",a:1397},{n:"Side income",a:490}],
-    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"Affirm",a:132}]));
+    [{n:"Phone",a:134},{n:"Insurance",a:273},{n:"Car",a:605},{n:"Hair",a:110},{n:"Subs+Apple",a:62},{n:"Affirm",a:132},{n:"Gas",a:240},{n:"Fun",a:200}]));
   m.push(seed27());                              // Jan '27
   m.push(seed27([{n:"Tax return",a:1000}]));     // Feb '27
   m.push(seed27());                              // Mar '27
@@ -139,17 +139,7 @@ function buildDefaultMonths(){
 function zeros(n){var a=[];for(var i=0;i<n;i++)a.push(0);return a;}
 function nulls(n){var a=[];for(var i=0;i<n;i++)a.push(null);return a;}
 function falses(n){var a=[];for(var i=0;i<n;i++)a.push(false);return a;}
-var DEFAULTS={
-  junEnd:1726,
-  months:buildDefaultMonths(),
-  gas:240,fun:200,
-  plasma2:false,jewelry:false,
-  discretionary:(function(){var d=zeros(22);d[0]=53;return d;})(),
-  monthOverrides:nulls(22),
-  closedMonths:falses(22),
-  hiddenTabs:[false,false,false],
-  currentMonthIdx:0,openMonth:null,phase:0,efTarget:3000
-};
+var DEFAULTS={"junEnd":1726,"months":[{"income":[{"n":"Paycheck 1","a":1397},{"n":"Paycheck 2","a":1397},{"n":"Side income","a":220},{"n":"Plasma remainder","a":175},{"n":"Gift / other","a":175}],"bills":[{"n":"Phone (intl+late)","a":258},{"n":"Insurance","a":258},{"n":"Car","a":605},{"n":"Misc","a":40},{"n":"Subs+Apple","a":62},{"n":"Credit card min","a":50},{"n":"Klarna","a":77},{"n":"Affirm","a":177},{"n":"CC payoff","a":369},{"n":"cashapp","a":60},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":1397},{"n":"Paycheck 2","a":1397},{"n":"Side income","a":270}],"bills":[{"n":"Phone","a":134},{"n":"Insurance","a":258},{"n":"Car","a":605},{"n":"Hair","a":110},{"n":"Subs+Apple","a":62},{"n":"Credit card min","a":25},{"n":"Kikoff (last)","a":70},{"n":"Klarna","a":22},{"n":"Affirm","a":177},{"n":"CC payoff","a":285},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":1397},{"n":"Paycheck 2","a":1397},{"n":"Side income","a":270}],"bills":[{"n":"Phone","a":134},{"n":"Insurance","a":258},{"n":"Car","a":605},{"n":"Hair","a":110},{"n":"Subs+Apple","a":62},{"n":"CC payoff (final)","a":500},{"n":"Klarna","a":20},{"n":"Affirm","a":177},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":1397},{"n":"Paycheck 2","a":1397},{"n":"Paycheck 3 (13th)","a":1397},{"n":"Side income","a":270}],"bills":[{"n":"Phone","a":134},{"n":"Insurance","a":258},{"n":"Car","a":605},{"n":"Hair","a":110},{"n":"Subs+Apple","a":62},{"n":"Affirm","a":132},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":1397},{"n":"Paycheck 2","a":1397},{"n":"Side income","a":270}],"bills":[{"n":"Phone","a":134},{"n":"Insurance","a":258},{"n":"Car","a":605},{"n":"Hair","a":110},{"n":"Subs+Apple","a":62},{"n":"Affirm","a":132},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":1397},{"n":"Paycheck 2","a":1397},{"n":"Side income","a":270}],"bills":[{"n":"Phone","a":134},{"n":"Insurance","a":258},{"n":"Car","a":605},{"n":"Hair","a":110},{"n":"Subs+Apple","a":62},{"n":"Affirm","a":132},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":1740},{"n":"Paycheck 2","a":1740},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":1740},{"n":"Paycheck 2","a":1740},{"n":"Side income","a":290},{"n":"Tax return","a":1000}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":1740},{"n":"Paycheck 2","a":1740},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":1740},{"n":"Paycheck 2","a":1740},{"n":"Side income","a":290},{"n":"Paycheck 3 (13th)","a":1740}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]},{"income":[{"n":"Paycheck 1","a":2075},{"n":"Paycheck 2","a":2075},{"n":"Side income","a":290}],"bills":[{"n":"Insurance","a":273},{"n":"Car","a":605},{"n":"Phone","a":134},{"n":"Student loans","a":50},{"n":"Subs+Apple","a":62},{"n":"Hair","a":110},{"n":"Child support","a":450},{"n":"Rent","a":1000},{"n":"Gas","a":240},{"n":"Fun","a":200}]}],"gas":240,"fun":200,"plasma2":false,"jewelry":false,"discretionary":[89,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"monthOverrides":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"closedMonths":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],"hiddenTabs":[false,false,false],"currentMonthIdx":0,"openMonth":null,"phase":0,"efTarget":3000};
 
 // ===================== STATE + PERSISTENCE =====================
 var S=JSON.parse(JSON.stringify(DEFAULTS));
@@ -173,6 +163,16 @@ function migrate(sv){
   if(typeof sv.openMonth==="number")S2.openMonth=Math.min(sv.openMonth,21);
   return S2;
 }
+function migrateGasFun(st){
+  // Move old shared gas/fun into each month's bills as line items (once)
+  var oldGas=(st.gas!=null)?Number(st.gas):240;
+  var oldFun=(st.fun!=null)?Number(st.fun):200;
+  if(st.months){for(var i=0;i<st.months.length;i++){var b=st.months[i].bills;
+    if(!b.some(function(x){return x.n==="Gas";}))b.push({n:"Gas",a:oldGas});
+    if(!b.some(function(x){return x.n==="Fun";}))b.push({n:"Fun",a:oldFun});
+  }}
+  return st;
+}
 function forceCorrections(st){
   // ALWAYS enforce: Jan 2027 onward (months 6-21) side income = 290.
   if(st.months){for(var i=6;i<st.months.length&&i<22;i++){if(st.months[i]&&st.months[i].income){st.months[i].income.forEach(function(L){if(L.n==="Side income")L.a=290;});}}}
@@ -181,9 +181,12 @@ function forceCorrections(st){
 try{
   var raw=localStorage.getItem(STORE);
   if(raw){var sv=JSON.parse(raw);
-    if(sv.__v===DATA_VERSION&&sv.months){S=Object.assign(JSON.parse(JSON.stringify(DEFAULTS)),sv);}
-    else{S=migrate(sv);}
-    S=forceCorrections(S);
+    if(sv.__v===DATA_VERSION&&sv.months){
+      // Only same-version saves are trusted (your live edits on THIS version)
+      S=Object.assign(JSON.parse(JSON.stringify(DEFAULTS)),sv);
+      S=forceCorrections(S);S=migrateGasFun(S);
+    }
+    // else: OLD/stale save -> ignore it, use fresh baked-in DEFAULTS (your current numbers)
   }
 }catch(e){storageOK=false;}
 function save(){try{S.__v=DATA_VERSION;localStorage.setItem(STORE,JSON.stringify(S));storageOK=true;}catch(e){storageOK=false;}flashBadge();}
@@ -243,7 +246,7 @@ function calc(){
   var months=S.months.map(function(M,i){
     var inc=sumLines(M.income),billSum=sumLines(M.bills);
     var extra=plasmaIn[i],disc=Number(S.discretionary[i])||0;
-    var net=inc-billSum-Number(S.gas)-Number(S.fun)+extra-disc;
+    var net=inc-billSum+extra-disc;
     var startBal=total;
     total=Math.round(total+net);
     if(S.monthOverrides[i]!=null)total=Number(S.monthOverrides[i]);
@@ -345,7 +348,7 @@ function render(){
     h+='<div class="help">This is April\'s ending balance — updates automatically as earlier months change.</div></div>';
   }
 
-  h+='<div class="sec">Tap a month to open & edit every line · lifestyle (gas+fun) shared across all months</div>';
+  h+='<div class="sec">Tap a month to open & edit every line · gas & fun are now per-month bills</div>';
 
   // month cards for this tab
   for(var i=TT.s;i<=TT.e;i++){
@@ -373,9 +376,6 @@ function render(){
         h+='<div class="lrow'+(L.done?' ldone':'')+'">'+ck+'<input class="lname" value="'+String(L.n).replace(/"/g,"&quot;")+'" onchange="editLineName('+i+',\'bills\','+li+',this.value)"><span class="lamt">$<input class="num" style="width:64px" type="number" value="'+L.a+'" onchange="editLine('+i+',\'bills\','+li+',this.value)"></span><button class="xbtn" onclick="delLine('+i+',\'bills\','+li+')">×</button></div>';
       });
       h+='<div class="addrow"><button class="addbtn" onclick="addLine('+i+',\'bills\')">+ add bill line</button><span class="lsub r">= '+fmt(m.billSum)+'</span></div>';
-      h+='<div class="lhead" style="margin-top:10px;color:#888">LIFESTYLE (shared across all months)</div>';
-      h+='<div class="lrow"><span class="lname" style="padding-left:2px;border:none">Gas</span><span class="lamt">$<input class="num" style="width:64px" type="number" value="'+S.gas+'" onchange="set(\'gas\',Number(this.value)||0)"></span></div>';
-      h+='<div class="lrow"><span class="lname" style="padding-left:2px;border:none">Fun</span><span class="lamt">$<input class="num" style="width:64px" type="number" value="'+S.fun+'" onchange="set(\'fun\',Number(this.value)||0)"></span></div>';
       if(m.disc!==0){h+='<div class="lrow"><span class="lname" style="padding-left:2px;border:none;color:'+(m.disc>0?'#FF8080':'#4FE080')+'">'+(m.disc>0?'Logged spending':'Logged additions')+'</span><span class="lamt" style="color:'+(m.disc>0?'#FF8080':'#4FE080')+'">'+(m.disc>0?'−':'+')+fmt(Math.abs(m.disc))+'</span></div>';}
       h+='<div class="msum"><span>'+meta[0]+' '+meta[1]+' net</span><span class="g">'+(m.net>=0?'+':'')+fmt(m.net)+'</span></div>';
       h+='<div class="msum"><span>Calculated → RBFCU '+fmt(m.ef)+' · SPAXX '+fmt(m.cash)+'</span><span style="color:'+(S.monthOverrides[i]!=null?'#666':'#4FE080')+';font-family:\'Bebas Neue\',sans-serif;font-size:1.1rem;'+(S.monthOverrides[i]!=null?'text-decoration:line-through':'')+'">'+fmt(m.total)+'</span></div>';
